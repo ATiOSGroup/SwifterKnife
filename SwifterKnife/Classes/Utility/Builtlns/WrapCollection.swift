@@ -240,79 +240,79 @@ public typealias WeakSet<O: AnyObject> = WrapCollection<Set<WeakBox<O>>>
 
 // MARK: - Dictionary
 
-public struct WrapDictionary<Key: Hashable, Container: WrapContainerType> {
-    private var _buffer: Dictionary<Key, Container>
-    fileprivate init(buffer: Dictionary<Key, Container>) {
-        _buffer = buffer
-    }
-    public init() {
-        _buffer = .init()
-    }
-    public init(minimumCapacity: Int) {
-        _buffer = .init(minimumCapacity: minimumCapacity)
-    }
-}
-extension WrapDictionary: Sequence { }
-
-extension WrapDictionary: Collection {
-    
-    public func index(after i: Dictionary<Key, Container>.Index) -> Dictionary<Key, Container>.Index {
-        _buffer.index(after: i)
-    }
-    public subscript(position: Dictionary<Key, Container>.Index) -> (Key, Container.WrapType) {
-        let pair = _buffer[position]
-        return (pair.key, pair.value.wrapValue)
-    }
-    public var startIndex: Dictionary<Key, Container>.Index {
-        _buffer.startIndex
-    }
-    public var endIndex: Dictionary<Key, Container>.Index {
-        _buffer.endIndex
-    }
-}
-extension WrapDictionary: ExpressibleByDictionaryLiteral {
-    public init(dictionaryLiteral elements: (Key, Container.WrapType)...) {
-        _buffer = .init(uniqueKeysWithValues: elements.map { ($0.0, Container($0.1)) })
-    }
-}
-extension WrapDictionary {
-    public subscript(key: Key) -> Container.WrapType? {
-        get { _buffer[key]?.wrapValue }
-        set {
-            if let val = newValue {
-                _buffer[key] = Container(val)
-            } else {
-                _buffer.removeValue(forKey: key)
-            }
-        }
-    }
-    @discardableResult
-    public mutating func removeValue(forKey key: Key) -> Container.WrapType? {
-        _buffer.removeValue(forKey: key)?.wrapValue
-    }
-    
-    public mutating func removeAll(keepingCapacity keepCapacity: Bool = false) {
-        _buffer.removeAll(keepingCapacity: keepCapacity)
-    }
-    
-    @discardableResult
-    public mutating func updateValue(_ value: Container.WrapType, forKey key: Key) -> Container.WrapType? {
-        _buffer.updateValue(Container(value), forKey: key)?.wrapValue
-    }
-    
-    public mutating func merge<S>(_ other: S, uniquingKeysWith combine: (Container.WrapType, Container.WrapType) throws -> Container.WrapType) rethrows where S : Sequence, S.Element == (Key, Container.WrapType) {
-        try _buffer.merge(other.map { ($0.0, Container($0.1)) }) {
-            try Container(combine($0.wrapValue, $1.wrapValue))
-        }
-    }
-}
-
-public extension WrapDictionary where Container.WrapType: OptionalType {
-    mutating func compact() {
-        _buffer = _buffer.filter { $0.value.wrapValue.value != nil }
-    }
-    var compacted: [Container.WrapType.Wrapped] {
-        Array(_buffer.compactMapValues(\.wrapValue.value).values)
-    }
-}
-public typealias WeakDictionary<Key: Hashable, O: AnyObject> = WrapDictionary<Key, WeakBox<O>>
+//public struct WrapDictionary<Key: Hashable, Container: WrapContainerType> {
+//    private var _buffer: Dictionary<Key, Container>
+//    fileprivate init(buffer: Dictionary<Key, Container>) {
+//        _buffer = buffer
+//    }
+//    public init() {
+//        _buffer = .init()
+//    }
+//    public init(minimumCapacity: Int) {
+//        _buffer = .init(minimumCapacity: minimumCapacity)
+//    }
+//}
+//extension WrapDictionary: Sequence { }
+//
+//extension WrapDictionary: Collection {
+//    
+//    public func index(after i: Dictionary<Key, Container>.Index) -> Dictionary<Key, Container>.Index {
+//        _buffer.index(after: i)
+//    }
+//    public subscript(position: Dictionary<Key, Container>.Index) -> (Key, Container.WrapType) {
+//        let pair = _buffer[position]
+//        return (pair.key, pair.value.wrapValue)
+//    }
+//    public var startIndex: Dictionary<Key, Container>.Index {
+//        _buffer.startIndex
+//    }
+//    public var endIndex: Dictionary<Key, Container>.Index {
+//        _buffer.endIndex
+//    }
+//}
+//extension WrapDictionary: ExpressibleByDictionaryLiteral {
+//    public init(dictionaryLiteral elements: (Key, Container.WrapType)...) {
+//        _buffer = .init(uniqueKeysWithValues: elements.map { ($0.0, Container($0.1)) })
+//    }
+//}
+//extension WrapDictionary {
+//    public subscript(key: Key) -> Container.WrapType? {
+//        get { _buffer[key]?.wrapValue }
+//        set {
+//            if let val = newValue {
+//                _buffer[key] = Container(val)
+//            } else {
+//                _buffer.removeValue(forKey: key)
+//            }
+//        }
+//    }
+//    @discardableResult
+//    public mutating func removeValue(forKey key: Key) -> Container.WrapType? {
+//        _buffer.removeValue(forKey: key)?.wrapValue
+//    }
+//    
+//    public mutating func removeAll(keepingCapacity keepCapacity: Bool = false) {
+//        _buffer.removeAll(keepingCapacity: keepCapacity)
+//    }
+//    
+//    @discardableResult
+//    public mutating func updateValue(_ value: Container.WrapType, forKey key: Key) -> Container.WrapType? {
+//        _buffer.updateValue(Container(value), forKey: key)?.wrapValue
+//    }
+//    
+//    public mutating func merge<S>(_ other: S, uniquingKeysWith combine: (Container.WrapType, Container.WrapType) throws -> Container.WrapType) rethrows where S : Sequence, S.Element == (Key, Container.WrapType) {
+//        try _buffer.merge(other.map { ($0.0, Container($0.1)) }) {
+//            try Container(combine($0.wrapValue, $1.wrapValue))
+//        }
+//    }
+//}
+//
+//public extension WrapDictionary where Container.WrapType: OptionalType {
+//    mutating func compact() {
+//        _buffer = _buffer.filter { $0.value.wrapValue.value != nil }
+//    }
+//    var compacted: [Container.WrapType.Wrapped] {
+//        Array(_buffer.compactMapValues(\.wrapValue.value).values)
+//    }
+//}
+//public typealias WeakDictionary<Key: Hashable, O: AnyObject> = WrapDictionary<Key, WeakBox<O>>
