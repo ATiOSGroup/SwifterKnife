@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Foundation
+import ObjectiveC
 
 extension KeyboardEvent {
     public enum Name: RawRepresentable, CaseIterable {

@@ -5,6 +5,7 @@
 //  Created by liyang on 2021/10/19.
 //
 
+import Foundation
 public extension Sequence {
     
     func typedFirst<T>() -> T? {

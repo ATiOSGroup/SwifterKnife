@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import Dispatch
 
 public enum PromiseError: Swift.Error {
     case timeout

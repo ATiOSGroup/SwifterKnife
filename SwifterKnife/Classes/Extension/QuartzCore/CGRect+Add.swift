@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import UIKit
 
 // MARK: - Properties
 public extension CGRect {

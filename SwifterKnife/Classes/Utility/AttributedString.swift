@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension NSString { 
     func allRange(of searchString: String) -> [NSRange] {

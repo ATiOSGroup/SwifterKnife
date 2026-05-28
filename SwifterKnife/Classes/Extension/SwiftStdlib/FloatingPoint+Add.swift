@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import QuartzCore
+import UIKit
 
 // MARK: - Properties
 

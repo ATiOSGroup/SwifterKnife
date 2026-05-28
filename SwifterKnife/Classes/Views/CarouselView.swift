@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - CarouselViewDelegate
 @objc public protocol CarouselViewDelegate {

@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import QuartzCore
 
 // MARK: - Properties
 public extension CGAffineTransform {

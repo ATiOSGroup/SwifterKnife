@@ -5,6 +5,7 @@
 //  Created by liyang on 2021/10/19.
 //
 
+import Foundation
 public extension BidirectionalCollection {
     /// Returns the element at the specified position. If offset is negative, the `n`th element from the end will be returned where `n` is the result of `abs(distance)`.
     ///

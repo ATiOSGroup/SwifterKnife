@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 /*
  一旦把label层设置为mask层，label层就不能显示了,

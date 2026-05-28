@@ -6,6 +6,8 @@
 //
 
 import Foundation  
+import QuartzCore
+import Dispatch
 
 // https://github.com/vincent-pradeilles/swift-tips
 public func resultOf<T>(_ code: () -> T) -> T {

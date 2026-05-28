@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 open class TextField: UITextField {
     public var insets: UIEdgeInsets = .zero {

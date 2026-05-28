@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ObjectiveC
 
 private var deinitObserveKey: UInt8 = 0
 

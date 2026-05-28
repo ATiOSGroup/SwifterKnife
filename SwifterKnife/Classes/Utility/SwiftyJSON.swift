@@ -5,6 +5,7 @@
 //
 
 // MARK: - Error
+import Foundation
 public enum JSONError: Int, Swift.Error {
     case unsupportedType = 999
     case indexOutOfBounds = 900

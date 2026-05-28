@@ -6,6 +6,7 @@
 //
 
 import Dispatch
+import ObjectiveC
 
 // MARK: - Properties
 public extension DispatchQueue {

@@ -7,6 +7,7 @@
 
 // MARK: - Methods
 
+import Foundation
 public extension RangeReplaceableCollection {
     
     /// Removes the first element of the collection which satisfies the given predicate.

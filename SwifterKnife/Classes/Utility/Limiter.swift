@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import QuartzCore
+import Dispatch
 
 // MARK: - SyncLimiter
 public protocol SyncLimiter {

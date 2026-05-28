@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ObjectiveC
 
 public enum TouchPosition {
     case topLeft, topRight, bottomLeft, bottomRight

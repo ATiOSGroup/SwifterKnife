@@ -5,6 +5,8 @@
 //  Created by liyang on 2021/10/19.
 //
 
+import Foundation
+
 // MARK: - Methods
 
 public extension Comparable {

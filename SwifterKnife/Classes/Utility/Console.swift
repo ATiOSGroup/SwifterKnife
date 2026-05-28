@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import QuartzCore
 
 public enum Console {
     

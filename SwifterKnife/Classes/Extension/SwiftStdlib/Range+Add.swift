@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 public extension ClosedRange where Bound: BinaryInteger {
     var middle: Bound {

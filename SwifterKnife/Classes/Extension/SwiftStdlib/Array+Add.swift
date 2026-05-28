@@ -8,6 +8,7 @@
 
 // MARK: - Initializers
 
+import Foundation
 public extension Array {
     /// Creates an array with specified number of elements, for each element it calls specified closure.
     /// - Parameters:

@@ -22,6 +22,7 @@
 // SOFTWARE.
 //
 
+import Foundation
 #if swift(>=5.1)
 
 /*

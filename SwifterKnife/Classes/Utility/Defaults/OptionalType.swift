@@ -23,6 +23,7 @@
 //
  
 
+import Foundation
 public protocol OptionalType: ExpressibleByNilLiteral {
     associatedtype Wrapped
     var value: Optional<Wrapped> { get }

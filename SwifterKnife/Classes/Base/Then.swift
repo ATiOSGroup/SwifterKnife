@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 import Foundation
+import UIKit
 #if !os(Linux)
 import CoreGraphics
 #endif 

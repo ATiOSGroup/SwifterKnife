@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 open class NormalStackView: UIStackView {
     open override class var layerClass: AnyClass {

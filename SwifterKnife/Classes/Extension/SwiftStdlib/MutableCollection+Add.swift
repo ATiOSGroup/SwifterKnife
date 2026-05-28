@@ -6,6 +6,7 @@
 //
 
 
+import Foundation
 public extension MutableCollection where Self: RandomAccessCollection {
     /// Sort the collection based on a keypath and a compare function.
     ///

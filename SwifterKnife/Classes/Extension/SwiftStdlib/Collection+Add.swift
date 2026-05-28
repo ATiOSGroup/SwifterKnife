@@ -7,6 +7,7 @@
 
 
 import Dispatch
+import UIKit
 
 // MARK: - Properties
 

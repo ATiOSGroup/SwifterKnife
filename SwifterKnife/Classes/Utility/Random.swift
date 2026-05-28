@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 public protocol Randomizable: Comparable {
     static func random(in range: Range<Self>) -> Self
